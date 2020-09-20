@@ -11,13 +11,14 @@ $( document ).ready(function() {
 });
 
 
-function runSearch (citySearch, urlBase){
+function runSearch (citySearch, searchURL){
     $.ajax ({
-        url: urlBase,
+        url: searchURL,
         method: "GET"
     })
 .done(function(cityData){
-    console.log(cityData)
+    console.log(cityData);
+    console.log(searchURL);
 })
 }
 
