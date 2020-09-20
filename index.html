@@ -11,6 +11,7 @@
 
 </head>
 <body>
+ 
   <div class="container">
     <div class="jumbotron">
       <h1>Keith's Awesome Weather Application</h1>
@@ -28,8 +29,8 @@
             <input type="text" class="form-control" id="search" placeholder="i.e. Toronto">
           </div>
           <div class="form-group">
-            <a href="submitBtn" class="btn btn-primary">Submit</a>
-            <a href="clearBtn" class="btn btn-primary">Clear</a>
+            <button type="submit" class="btn btn-primary" id="searchBtn">Submit</button>
+            <button type="clear" class="btn btn-primary">Clear</button>
           </div>
           <div class="form-group">
             <h4 class="panel-title">
@@ -48,12 +49,21 @@
     <div class="panel-heading">
       <h3 class="panel-title">Search Results</h3>
       <div class ="panel-body">
-        xxxx
+        <div class="well">
+          <h1>City</h1>
+          <h3>Country</h3>
+          <h4>Temperature</h4>
+          <h4>UV Index:</h4>
+        </div>
       </div>
   </div>
   </div>
   </div>
+  <!-- connect to jquery -->
+  <script src="jquery.js"></script>
 
+  <!-- connect index.js -->
+  <script src="index.js"></script>
 
 </body>
 </html>

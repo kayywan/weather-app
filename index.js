@@ -1,15 +1,30 @@
+const authKey = "2ef9f715d168ad10ae6fcd45834da550";
+var citySearch = "";
 var search = document.querySelector('.button')
-var inputVal = document.querySelector('.inputVal')
-var name =  document.querySelector('name')
-var date =  document.querySelector('date')
-var uvIndex =  document.querySelector('uvIndex')
-var temp =  document.querySelector('temp')
-var humidity =  document.querySelector('humidity')
+var urlBase = "http://api.openweathermap.org/data/2.5/weather?q=" + "&appid=" + authKey;
 
-$(search).on('click', function () {
-fetch ('https://api.openweathermap.org/data/2.5/weather?q='+inputVal.value+'&appid=2ef9f715d168ad10ae6fcd45834da550')
-.then(Response => Response.json())
-.then(data => console.log(data))
+$( document ).ready(function() {
+    $( "a" ).click(function( event ) {
+        alert( "The link will no longer take you to jquery.com" );
+        event.preventDefault();
+    });
+});
 
-.catch(err => alert("That doesn't sound like the right city."))
+
+function runSearch (citySearch, urlBase){
+    $.ajax ({
+        url: urlBase,
+        method: "GET"
+    })
+.done(function(cityData){
+    console.log(cityData)
+})
+}
+
+// main process
+
+$('#searchBtn').on('click', function(){
+    runSearch();
+
+    return false;
 })
